@@ -1,1 +1,1 @@
-web: gunicorn Spam_classifer:Spam_classifer
+web: gunicorn app:Spam_classifer
