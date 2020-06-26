@@ -5,12 +5,13 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 import joblib
 
-clf = joblib.load(open('nlp_model.pkl','rb'))
+filename = 'nlp_model.pkl'
+clf = pickle.load(open('nlp_model.pkl','rb'))
 cv = pickle.load(open('tranform1.pkl','rb'))
 app = Flask(__name__)
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
 
 @app.route('/predict',methods=['POST'])
